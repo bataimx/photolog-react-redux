@@ -27,7 +27,6 @@ export {
   StopLoading,
   StartLoading,
   setCurrentPage,
-  PhotoListSaga,
   getPhotosAsync,
   addPhotos,
   clearPhotos,
@@ -37,13 +36,15 @@ export {
   getCollectionsAsync,
   addCollections,
   clearCollections,
-  CollectionsSaga,
   getAppDataAsync,
-  CommonActionsSaga,
   updatePhotoAsync,
   updatePhoto,
   addCollectionsAsync,
   removeCollections,
   removeCollectionsAsync,
 };
-export const sagaRoot = [PhotoListSaga(), CollectionsSaga(), CommonActionsSaga()];
+export const sagaRoot = [
+  PhotoListSaga(),
+  CollectionsSaga(),
+  CommonActionsSaga(),
+];

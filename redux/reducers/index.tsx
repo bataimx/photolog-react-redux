@@ -2,6 +2,7 @@ import SettingReducer from './SettingReducer';
 import PhotoListReducer from './PhotoListReducer';
 import CollectionsReducer from './CollectionsReducer';
 import { StoreModel } from '../../models';
+import { reducerList } from './util';
 
 const rootReducer: StoreModel = {
   Setting: SettingReducer,
@@ -9,4 +10,4 @@ const rootReducer: StoreModel = {
   Collections: CollectionsReducer,
 };
 
-export { rootReducer, SettingReducer, PhotoListReducer, CollectionsReducer };
+export { rootReducer };

@@ -8,7 +8,7 @@ import {
 
 const initCollections: CollectionModel[] = [];
 
-const CollectionsReducer = createReducer(initCollections, {
+const reducerActions = {
   [addCollections.type]: (
     state: CollectionModel[],
     action: ActionModel<CollectionModel[]>
@@ -27,6 +27,7 @@ const CollectionsReducer = createReducer(initCollections, {
     const idList = items.map((item) => item.id);
     return state.filter((item) => !idList.includes(item.id));
   },
-});
+};
 
+const CollectionsReducer = createReducer(initCollections, reducerActions);
 export default CollectionsReducer;

@@ -7,7 +7,7 @@ const initSetting: SettingModel = {
   currentPage: {},
 };
 
-const SettingReducer = createReducer(initSetting, {
+const reducerActions = {
   [StartLoading.type]: (state: SettingModel) => {
     state.isLoading = true;
   },
@@ -20,6 +20,7 @@ const SettingReducer = createReducer(initSetting, {
   ) => {
     state.currentPage = { ...state.currentPage, ...action.payload };
   },
-});
+};
 
+const SettingReducer = createReducer(initSetting, reducerActions);
 export default SettingReducer;

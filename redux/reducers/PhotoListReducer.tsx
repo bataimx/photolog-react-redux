@@ -1,10 +1,9 @@
 import { createReducer } from '@reduxjs/toolkit';
 import { ActionModel, PhotoModel } from '../../models';
 import { addPhotos, clearPhotos, removePhotos, updatePhoto } from '../actions';
-
 const initPhotoList: PhotoModel[] = [];
 
-const PhotoListReducer = createReducer(initPhotoList, {
+const reducerActions = {
   [addPhotos.type]: (
     state: PhotoModel[],
     action: ActionModel<PhotoModel[]>
@@ -32,6 +31,7 @@ const PhotoListReducer = createReducer(initPhotoList, {
     const idList = Photos.map((photo) => photo.id);
     return state.filter((photo) => !idList.includes(photo.id));
   },
-});
+};
 
+const PhotoListReducer = createReducer(initPhotoList, reducerActions);
 export default PhotoListReducer;
